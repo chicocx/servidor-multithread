@@ -19,6 +19,7 @@ public class ThreadConexao extends Thread{
 	private JTextArea textArea;
 
 	private String ip;
+        
 
 	private OutputStream os;
 	
@@ -50,7 +51,7 @@ public class ThreadConexao extends Thread{
 						ByteArrayOutputStream baos = new ByteArrayOutputStream();
 						baos.write(buffer, 0, count);
 						String msg = new String(baos.toByteArray());
-						textArea.append("\n"+msg);
+						textArea.append(msg);
 					}
 				}
 			} catch (IOException e) {
