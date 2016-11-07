@@ -9,6 +9,11 @@ import java.net.UnknownHostException;
 
 import javax.swing.JTextArea;
 
+/**
+ * Thread mantenedora da conexão
+ * @author Francisco
+ *
+ */
 public class ThreadConexao extends Thread{
 
 	private JTextArea textArea;
