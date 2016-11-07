@@ -130,6 +130,7 @@ public class Tela extends javax.swing.JFrame {
         ip = JOptionPane.showInputDialog(this, "Digite o IP");
         threadConexao = new ThreadConexao(txtMensagens, ip);
         threadConexao.start();
+        
     }//GEN-LAST:event_btnConectarActionPerformed
 
     /**

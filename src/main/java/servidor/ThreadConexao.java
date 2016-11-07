@@ -19,6 +19,7 @@ public class ThreadConexao extends Thread{
 	private JTextArea textArea;
 
 	private String ip;
+        
 
 	private OutputStream os;
 	
