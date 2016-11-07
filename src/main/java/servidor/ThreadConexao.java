@@ -50,7 +50,7 @@ public class ThreadConexao extends Thread{
 						ByteArrayOutputStream baos = new ByteArrayOutputStream();
 						baos.write(buffer, 0, count);
 						String msg = new String(baos.toByteArray());
-						textArea.append(msg);
+						textArea.append("\n"+msg);
 					}
 				}
 			} catch (IOException e) {
