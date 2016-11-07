@@ -5,6 +5,8 @@
  */
 package servidor;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.OutputStream;
 
 import javax.swing.JOptionPane;
@@ -24,6 +26,13 @@ public class Tela extends javax.swing.JFrame {
      */
     public Tela() {
         initComponents();
+        txtMessage.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnEnviarActionPerformed(e);
+			}
+		});
     }
 
     /**
@@ -113,7 +122,8 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIniciarServidorActionPerformed
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-    	threadConexao.enviar(txtMessage.getText());
+    	threadConexao.enviar(txtMessage.getText() + "\n");
+    	txtMessage.setText("");
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     private void btnConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConectarActionPerformed
