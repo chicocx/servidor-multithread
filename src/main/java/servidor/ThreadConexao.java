@@ -20,16 +20,18 @@ public class ThreadConexao extends Thread{
 
 	private String ip;
         
-
 	private OutputStream os;
 	
 	private InputStream is;
+	
+	private String sender;
 	
 	public ThreadConexao(JTextArea textArea, String ip) {
 		this.textArea = textArea;
 		this.ip = ip;
 		try {
 			Socket socket = new Socket(ip, 9000);
+			this.sender = socket.getLocalAddress().getHostAddress();
 			os = socket.getOutputStream();
 			is = socket.getInputStream();
 		} catch (UnknownHostException e) {
@@ -63,7 +65,7 @@ public class ThreadConexao extends Thread{
 	
 	public void enviar(String msg){
 		try {
-			os.write(msg.getBytes());
+			os.write((sender + ": " + msg).getBytes());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
